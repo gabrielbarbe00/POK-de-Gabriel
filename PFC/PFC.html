@@ -21,13 +21,13 @@
                 ciseau qui gagne contre la feuille qui gagne contre la pierre.</p>
                 <div class="ensemble">
                     <div class="jouer IA"><p>Jouer contre l'IA.</p>
-                        <div class="button">
-                            <button>Jouer</button>
+                        <div class="button1">
+                            <button1>Jouer</button1>
                         </div>
                     </div>
                     <div class="jouer J2"><p>Jouer contre J2</p>
                         <div class="button2">
-                            <button>Jouer</button>
+                            <button2>Jouer</button2>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
             </div>
         </div>
         <script>
-            var btn = document.querySelector('button');
+            var btn = document.querySelector('button1');
             var btn2 = document.querySelector('button2');
 
             var J1,J2, Vainqueur;
@@ -46,6 +46,7 @@
             var panneau, html, panel, btn3;
             var resetButton;
             var pierre, feuille, ciseaux;
+            var bool=false;
 
 
             btn.addEventListener('click', choixCoups2);
@@ -79,7 +80,7 @@
                     var msg = document.createElement('p');
                     msg.textContent = 'J2 a joué ' + J2 + '. Match nul. Réessayez'
                     panel.appendChild(msg);
-                    choixCoups2();
+                    setGameOver();
                 } else {
                     var msg = document.createElement('p');
                     msg.textContent = 'J2 a joué ' + J2 + '. Le vainqueur est : ' + Vainqueur;
@@ -89,19 +90,26 @@
             }
 
             function choixCoups (){
-                var bool=false;
+                bool=false;
                 while (bool===false) {
                     J1=prompt('J1 choisit son coup : Pierre, Feuille ou Ciseaux');
                     if (J1 === 'Pierre' || J1 === 'Feuille' || J1 === 'Ciseaux') {
                         bool=true;
-                    } else {
+                    } else if (J1===null){
+                        bool=true;
+
+                    }
+                    else {
                         bool=false;
                         alert('Entrez un coup valide ');}
                 }
                 bool=false;
                 while (bool===false) {
                     J2=prompt('J2 choisit son coup');
-                        if (J2 === 'Pierre' || J2 === 'Feuille' || J2 === 'Ciseaux') {
+                    if (J1===null || J2===null){
+                        bool=true;
+                    }
+                        else if (J2 === 'Pierre' || J2 === 'Feuille' || J2 === 'Ciseaux') {
                             bool=true;
                         } else {
                             bool=false;
@@ -183,7 +191,7 @@
 
                 resetButton = document.createElement('button');
                 resetButton.textContent = 'Start new game';
-                resetButton.setAttribute('class', 'button');
+                resetButton.setAttribute('class', 'button1');
                 panel.appendChild(resetButton);
                 resetButton.addEventListener('click', resetGame);
             }
@@ -191,7 +199,6 @@
             function resetGame(){
                 html.removeChild(panel);
                 resetButton.parentNode.removeChild(resetButton);
-                //html.removeChild(panel);
                 document.querySelector('.ensemble').style.display = 'block';
                 
             }
