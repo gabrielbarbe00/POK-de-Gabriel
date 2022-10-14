@@ -1,0 +1,26 @@
+#test{
+    border: 2px solid #000000;
+    animation-duration:1s;
+    animation-name : rotating;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.tourne {
+    animation-play-state: running;
+    
+}
+
+.stop {
+    animation-play-state: paused;
+}
