@@ -44,7 +44,10 @@ p {
   font-size: larger;
 }
 .resetbutton{
-  margin-top: 20px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 .ensemble {
 text-align: center;
