@@ -187,12 +187,17 @@
             }
 
             function setGameOver() {
-                html=document.querySelector('html');
+                html = document.querySelector('html');
+
+                ensemble = document.createElement('div');
+                ensemble.setAttribute('class', 'resetbutton');
+                html.appendChild(ensemble);
 
                 resetButton = document.createElement('button');
                 resetButton.textContent = 'Start new game';
                 resetButton.setAttribute('class', 'button1');
-                panel.appendChild(resetButton);
+                ensemble.appendChild(resetButton);
+
                 resetButton.addEventListener('click', resetGame);
             }
 
