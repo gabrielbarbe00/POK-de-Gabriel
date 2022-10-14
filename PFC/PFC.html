@@ -15,7 +15,7 @@
             </div>
             <div class='content'> 
                 <br>
-                <h2>Sur cette page vous pouvez jouer à <em>pierre feuille ciseaux</em> avec un ami. </h2>
+                <h2>Sur cette page vous pouvez jouer à <em>pierre feuille ciseaux</em> avec un ami ou contre l'IA. </h2>
                 <br>
                 <p><strong>Règles : </strong>Tour à tour, les joueurs sélectionnent une action parmi les 3. La pierre gagne contre le 
                 ciseau qui gagne contre la feuille qui gagne contre la pierre.</p>
@@ -83,7 +83,7 @@
                     setGameOver();
                 } else {
                     var msg = document.createElement('p');
-                    msg.textContent = 'J2 a joué ' + J2 + '. Le vainqueur est : ' + Vainqueur;
+                    msg.textContent = 'J1 a joué '+ J1 + '. J2 a joué ' + J2 + '. Le vainqueur est : ' + Vainqueur;
                     panel.appendChild(msg);
                     setGameOver();
                 }
@@ -91,6 +91,7 @@
 
             function choixCoups (){
                 bool=false;
+                document.querySelector('.ensemble').style.display = 'none';
                 while (bool===false) {
                     J1=prompt('J1 choisit son coup : Pierre, Feuille ou Ciseaux');
                     if (J1 === 'Pierre' || J1 === 'Feuille' || J1 === 'Ciseaux') {
@@ -117,6 +118,7 @@
                         }
                 }
                 PFC(J1,J2);
+                Vainqueur='A';
             }
 
             function choixCoups2 () {
