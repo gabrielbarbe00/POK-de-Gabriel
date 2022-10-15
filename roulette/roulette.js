@@ -5,7 +5,13 @@ let bouton_supp4 = document.getElementById("bouton_supp4");
 let div_choix2 = document.getElementById("div_choix2");
 let div_choix3 = document.getElementById("div_choix3");
 let div_choix4 = document.getElementById("div_choix4");
+let text_choix1 = document.getElementById('text_choix1').value;
+let text_choix2 = document.getElementById('text_choix2');
+let text_choix3 = document.getElementById('text_choix3');
+let text_choix4 = document.getElementById('text_choix4');
 let nbr_choice = 2;
+
+localStorage.clear()
 
 bouton_add2.addEventListener("click", () => {
     div_choix3.style.display = "block";
@@ -35,7 +41,11 @@ bouton_supp4.addEventListener("click", () => {
 
 document.getElementById("bouton_suivant").addEventListener("click", () => {
   if (nbr_choice == 2){
-    location.href = "./roulette2.html"
+    /* location.href = "./roulette2.html" */
+    let text_choix1 = document.getElementById('text_choix1').value
+    localStorage.setItem('text_choix1',text_choix1)
+    
+    console.log(text_choix1)
   } else if (nbr_choice == 3){
     location.href = "./roulette3.html"
   } else if (nbr_choice == 4){
@@ -43,6 +53,8 @@ document.getElementById("bouton_suivant").addEventListener("click", () => {
   }
     
 })
+
+
 
 /* document.getElementById("bouton_start2").addEventListener("click", () => {
   console.log('start')
