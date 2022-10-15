@@ -34,3 +34,9 @@
 .h1 {
     padding: 50px;
 }
+.droits {
+    font-size: xx-small;
+    font-weight: lighter;
+    padding: 0px;
+    font-style: italic;
+  }

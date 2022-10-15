@@ -15,19 +15,19 @@
             </div>
             <div class='content'> 
                 <br>
-                <h2>Sur cette page vous pouvez jouer à <em>pierre feuille ciseaux</em> avec un ami. </h2>
+                <h2>Sur cette page vous pouvez jouer à <em>pierre feuille ciseaux</em> avec un ami ou contre l'IA. </h2>
                 <br>
                 <p><strong>Règles : </strong>Tour à tour, les joueurs sélectionnent une action parmi les 3. La pierre gagne contre le 
                 ciseau qui gagne contre la feuille qui gagne contre la pierre.</p>
                 <div class="ensemble">
                     <div class="jouer IA"><p>Jouer contre l'IA.</p>
-                        <div class="button">
-                            <button>Jouer</button>
+                        <div class="button1">
+                            <button1>Jouer</button1>
                         </div>
                     </div>
                     <div class="jouer J2"><p>Jouer contre J2</p>
                         <div class="button2">
-                            <button>Jouer</button>
+                            <button2>Jouer</button2>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
             </div>
         </div>
         <script>
-            var btn = document.querySelector('button');
+            var btn = document.querySelector('button1');
             var btn2 = document.querySelector('button2');
 
             var J1,J2, Vainqueur;
@@ -46,6 +46,7 @@
             var panneau, html, panel, btn3;
             var resetButton;
             var pierre, feuille, ciseaux;
+            var bool=false;
 
 
             btn.addEventListener('click', choixCoups2);
@@ -79,29 +80,37 @@
                     var msg = document.createElement('p');
                     msg.textContent = 'J2 a joué ' + J2 + '. Match nul. Réessayez'
                     panel.appendChild(msg);
-                    choixCoups2();
+                    setGameOver();
                 } else {
                     var msg = document.createElement('p');
-                    msg.textContent = 'J2 a joué ' + J2 + '. Le vainqueur est : ' + Vainqueur;
+                    msg.textContent = 'J1 a joué '+ J1 + '. J2 a joué ' + J2 + '. Le vainqueur est : ' + Vainqueur;
                     panel.appendChild(msg);
                     setGameOver();
                 }
             }
 
             function choixCoups (){
-                var bool=false;
+                bool=false;
+                document.querySelector('.ensemble').style.display = 'none';
                 while (bool===false) {
                     J1=prompt('J1 choisit son coup : Pierre, Feuille ou Ciseaux');
                     if (J1 === 'Pierre' || J1 === 'Feuille' || J1 === 'Ciseaux') {
                         bool=true;
-                    } else {
+                    } else if (J1===null){
+                        bool=true;
+
+                    }
+                    else {
                         bool=false;
                         alert('Entrez un coup valide ');}
                 }
                 bool=false;
                 while (bool===false) {
                     J2=prompt('J2 choisit son coup');
-                        if (J2 === 'Pierre' || J2 === 'Feuille' || J2 === 'Ciseaux') {
+                    if (J1===null || J2===null){
+                        bool=true;
+                    }
+                        else if (J2 === 'Pierre' || J2 === 'Feuille' || J2 === 'Ciseaux') {
                             bool=true;
                         } else {
                             bool=false;
@@ -109,6 +118,7 @@
                         }
                 }
                 PFC(J1,J2);
+                Vainqueur='A';
             }
 
             function choixCoups2 () {
@@ -130,18 +140,18 @@
                 var l3 = document.createElement('li');
                 choix.appendChild(l3);
 
-                pierre = document.createElement('button');
-                pierre.textContent='Pierre';
+                pierre = document.createElement('img');
+                pierre.src ='../Images/Pierre.png';
                 l1.appendChild(pierre);
                 pierre.addEventListener('click', Pierre);
 
-                ciseaux = document.createElement('button');
-                ciseaux.textContent='Ciseaux';
+                ciseaux = document.createElement('img');
+                ciseaux.src='../Images/Ciseaux.png'
                 l2.appendChild(ciseaux);
                 ciseaux.addEventListener('click', Ciseaux);
 
-                feuille = document.createElement('button');
-                feuille.textContent='Feuille';
+                feuille = document.createElement('img');
+                feuille.src='../Images/Feuille.png';
                 l3.appendChild(feuille);
                 feuille.addEventListener('click', Feuille);
 
@@ -179,19 +189,23 @@
             }
 
             function setGameOver() {
-                html=document.querySelector('html');
+                html = document.querySelector('html');
+
+                ensemble = document.createElement('div');
+                ensemble.setAttribute('class', 'resetbutton');
+                html.appendChild(ensemble);
 
                 resetButton = document.createElement('button');
                 resetButton.textContent = 'Start new game';
-                resetButton.setAttribute('class', 'button');
-                panel.appendChild(resetButton);
+                resetButton.setAttribute('class', 'button1');
+                ensemble.appendChild(resetButton);
+
                 resetButton.addEventListener('click', resetGame);
             }
 
             function resetGame(){
                 html.removeChild(panel);
                 resetButton.parentNode.removeChild(resetButton);
-                //html.removeChild(panel);
                 document.querySelector('.ensemble').style.display = 'block';
                 
             }
