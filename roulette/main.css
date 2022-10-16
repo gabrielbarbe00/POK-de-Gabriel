@@ -18,229 +18,293 @@
     animation-play-state: paused;
 }
 
-body {
+#page {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+body{
+    margin: 0px;
+}
+
+header{
+    background-color: #33d373;
+    text-align: center;
+    padding: 10px;
+    border-bottom : 2px solid #5D6063;
+    margin-bottom: 20px;
+}
+
+#logo {
+    position:absolute;
+    top:15px;
+    left:10px; 
+    width:70px; 
+    height:70px; 
+    z-index:2;
+}
+
+
 /* Index */
-#div_choix1{
-    
-    /* border:2px solid #000000; */
-    margin-bottom: 10px;
-    display: block;
-    width: 300px;
+
+#intro{
+    margin-bottom: 1em;
 }
 
-#div_choix2{
-    /* border:2px solid #000000; */
-    display: block;
-    width: 300px;
-    margin-bottom: 10px;
-}
-#text_choix2{
-    width: auto;
-    margin-right: 10px;
-    float:left;
+.div_choix{
+    width: 490px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
 }
 
-#bouton_add2{
-    width: auto;
-    float:left;
+.choix{
+    width: 80%;
+    height: 100%;
+    font-size: 150%;
+    border-radius: 5px;
+}
+
+::placeholder{
+    color:#33d3738b
+}
+
+.bouton{
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: #33d373;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid #5D6063;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color : black;
 }
 
 #div_choix3{
-    width: 300px;
     display: none;
-    margin-bottom: 10px;
-    /* border:2px solid #000000; */
-    
 }
-#text_choix3{
-    width: auto;
-    margin-right: 10px;
-    float:left;
-}
-#bouton_add3{
-    width: auto;
-    margin-right: 10px;
-    float:left;
-}
-#bouton_supp3{
-    width: auto;
-    float:left;
-}
-
 
 #div_choix4{
-    width: 300px;
     display: none;
-    margin-bottom: 10px;
-    /* border:2px solid #000000; */
+}
+
+#bouton_suivant{
+    width: auto;
+    height: auto;
+    font-size: 1.3em;
+    padding:15px
 }
 
 
 /* Roulette 2 */
 #roulette2{
-    display: inline-flex;
     animation-duration:0.5s;
     animation-name : rotating;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
-    /* border: 2px solid #000000; */
+    margin-bottom: 15px;
 }
 
 #triangle {
     width: 0;
     height: 0;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-top: 20px solid black;
-    margin-left: 238px;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 25px solid black;
+    position: absolute;
+    z-index: 2;
+
 }
 
 #roulette_2_choix_1{
     text-align: center;
-    /* border: 2px solid #000000; */
     position:absolute;
-    top:230px;
-    left:-50px; 
+    top:218px;
+    left:-40px; 
     width:150px; 
     height:20px; 
     z-index:2;
     font-size:120%;
     rotate: 270deg;
+    font-weight: bold;
+
 }
 
 #roulette_2_choix_2{
     text-align: center;
-    /* border: 2px solid #000000; */
     position:absolute;
-    top:230px;
-    left:417px; 
-    width:150px; 
-    height:20px; 
-    z-index:2;
-    font-size:120%;
-    rotate: 90deg
-}
-
-
-
-
-/* Roulette 3 */
-
-#roulette3{
-    display: inline-flex;
-    animation-duration:0.5s;
-    animation-name : rotating;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-fill-mode: forwards;
-    /* border: 2px solid #000000; */
-}
-
-#roulette_3_choix_1{
-    text-align: center;
-    /* border: 2px solid #000000; */
-    position:absolute;
-    top:110px;
-    left:-30px; 
-    width:150px; 
-    height:20px; 
-    z-index:2;
-    font-size:120%;
-    rotate: 300deg;
-}
-
-#roulette_3_choix_2{
-    text-align: center;
-    /* border: 2px solid #000000; */
-    position:absolute;
-    top:110px;
+    top:218px;
     left:385px; 
     width:150px; 
     height:20px; 
     z-index:2;
     font-size:120%;
-    rotate: 60deg
+    rotate: 90deg;
+    font-weight: bold;
 }
 
-#roulette_3_choix_3{
-    text-align: center;
-    /* border: 2px solid #000000; */
-    position:absolute;
-    top:460px;
-    left:180px; 
-    width:150px; 
-    height:20px; 
-    z-index:2;
-    font-size:120%;
-    rotate: 180deg
+#bouton_start2{
+    width: auto;
+    height: auto;
+    font-size: 1.3em;
+    padding:15px
 }
 
-/* Roulette 4 */
+#bouton_retour2{
+    width: auto;
+    height: auto;
+    font-size: 1.3em;
+    padding:15px;
+    display: none;
+    z-index: 2;
+}
 
-#roulette4{
-    display: inline-flex;
+
+/* Roulette 3 */
+
+#roulette3{
     animation-duration:0.5s;
     animation-name : rotating;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
-    /* border: 2px solid #000000; */
+    margin-bottom: 15px;
+}
+
+#roulette_3_choix_1{
+    text-align: center;
+    position:absolute;
+    top:110px;
+    left:-10px; 
+    width:150px; 
+    height:20px; 
+    z-index:2;
+    font-size:120%;
+    rotate: 300deg;
+    font-weight: bold;
+}
+
+#roulette_3_choix_2{
+    text-align: center;
+    position:absolute;
+    top:110px;
+    left:355px; 
+    width:150px; 
+    height:20px; 
+    z-index:2;
+    font-size:120%;
+    rotate: 60deg;
+    font-weight: bold;
+}
+
+#roulette_3_choix_3{
+    text-align: center;
+    position:absolute;
+    top:430px;
+    left:173px; 
+    width:150px; 
+    height:20px; 
+    z-index:2;
+    font-size:120%;
+    rotate: 180deg;
+    font-weight: bold;
+}
+
+#bouton_start3{
+    width: auto;
+    height: auto;
+    font-size: 1.3em;
+    padding:15px
+}
+
+#bouton_retour3{
+    width: auto;
+    height: auto;
+    font-size: 1.3em;
+    padding:15px;
+    display: none;
+    z-index: 2;
+}
+
+
+/* Roulette 4 */
+
+#roulette4{
+    animation-duration:0.5s;
+    animation-name : rotating;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
 }
 
 #roulette_4_choix_1{
     text-align: center;
-    /* border: 2px solid #000000; */
     position:absolute;
-    top:50px;
-    left:20px; 
+    top:70px;
+    left:25px; 
     width:150px; 
     height:20px; 
     z-index:2;
     font-size:120%;
     rotate: 315deg;
+    font-weight: bold;
 }
 
 #roulette_4_choix_2{
     text-align: center;
-    /* border: 2px solid #000000; */
     position:absolute;
-    top:50px;
-    left:330px; 
+    top:70px;
+    left:325px; 
     width:150px; 
     height:20px; 
     z-index:2;
     font-size:120%;
-    rotate: 45deg
+    rotate: 45deg;
+    font-weight: bold;
 }
 
 #roulette_4_choix_3{
     text-align: center;
-    /* border: 2px solid #000000; */
     position:absolute;
-    top:390px;
-    left:330px; 
+    top:365px;
+    left:325px; 
     width:150px; 
     height:20px; 
     z-index:2;
     font-size:120%;
-    rotate: 135deg
+    rotate: 135deg;
+    font-weight: bold;
 }
 
 #roulette_4_choix_4{
     text-align: center;
-    /* border: 2px solid #000000; */
     position:absolute;
-    top:390px;
-    left:20px; 
+    top:365px;
+    left:25px; 
     width:150px; 
     height:20px; 
     z-index:2;
     font-size:120%;
-    rotate: 225deg
+    rotate: 225deg;
+    font-weight: bold;
+}
+
+#bouton_start4{
+    width: auto;
+    height: auto;
+    font-size: 1.3em;
+    padding:15px
+}
+
+#bouton_retour4{
+    width: auto;
+    height: auto;
+    font-size: 1.3em;
+    padding:15px;
+    display: none;
+    z-index: 2;
 }

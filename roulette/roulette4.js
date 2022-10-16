@@ -4,8 +4,13 @@ document.getElementById("roulette_4_choix_3").textContent = localStorage.getItem
 document.getElementById("roulette_4_choix_4").textContent = localStorage.getItem('text_choix4')
 
 document.getElementById("bouton_start4").addEventListener("click", () => {
-    console.log('start4')
     rotation('roulette4')
+    document.getElementById("bouton_start4").style.display = "none"
+    document.getElementById("bouton_retour4").style.display = "block"
+  })
+
+document.getElementById("bouton_retour4").addEventListener("click", () => {
+    location.href = "./index.html"
   })
   
   function rotation(roue){

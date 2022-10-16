@@ -3,8 +3,13 @@ document.getElementById("roulette_3_choix_2").textContent = localStorage.getItem
 document.getElementById("roulette_3_choix_3").textContent = localStorage.getItem('text_choix3')
 
 document.getElementById("bouton_start3").addEventListener("click", () => {
-    console.log('start3')
     rotation('roulette3')
+    document.getElementById("bouton_start3").style.display = "none"
+    document.getElementById("bouton_retour3").style.display = "block"
+  })
+
+document.getElementById("bouton_retour3").addEventListener("click", () => {
+    location.href = "./index.html"
   })
   
   function rotation(roue){
