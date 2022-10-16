@@ -1,17 +1,43 @@
 /* General */
 
+@keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.tourne {
+    animation-play-state: running;
+    
+}
+
+.stop {
+    animation-play-state: paused;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* Index */
 #div_choix1{
     
     /* border:2px solid #000000; */
     margin-bottom: 10px;
     display: block;
+    width: 300px;
 }
 
 #div_choix2{
-    height: 110px;
     /* border:2px solid #000000; */
     display: block;
+    width: 300px;
+    margin-bottom: 10px;
 }
 #text_choix2{
     width: auto;
@@ -25,8 +51,9 @@
 }
 
 #div_choix3{
-    height: 110px;
+    width: 300px;
     display: none;
+    margin-bottom: 10px;
     /* border:2px solid #000000; */
     
 }
@@ -47,8 +74,9 @@
 
 
 #div_choix4{
-    height : 110px;
+    width: 300px;
     display: none;
+    margin-bottom: 10px;
     /* border:2px solid #000000; */
 }
 
@@ -56,12 +84,21 @@
 /* Roulette 2 */
 #roulette2{
     display: inline-flex;
-    animation-duration:1s;
+    animation-duration:0.5s;
     animation-name : rotating;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
     /* border: 2px solid #000000; */
+}
+
+#triangle {
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 20px solid black;
+    margin-left: 238px;
 }
 
 #roulette_2_choix_1{
@@ -90,26 +127,120 @@
     rotate: 90deg
 }
 
-@keyframes rotating {
-    from{
-        -webkit-transform: rotate(0deg);
-    }
-    to{
-        -webkit-transform: rotate(360deg);
-    }
-}
 
-.tourne {
-    animation-play-state: running;
-    
-}
-
-.stop {
-    animation-play-state: paused;
-}
 
 
 /* Roulette 3 */
 
+#roulette3{
+    display: inline-flex;
+    animation-duration:0.5s;
+    animation-name : rotating;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    /* border: 2px solid #000000; */
+}
+
+#roulette_3_choix_1{
+    text-align: center;
+    /* border: 2px solid #000000; */
+    position:absolute;
+    top:110px;
+    left:-30px; 
+    width:150px; 
+    height:20px; 
+    z-index:2;
+    font-size:120%;
+    rotate: 300deg;
+}
+
+#roulette_3_choix_2{
+    text-align: center;
+    /* border: 2px solid #000000; */
+    position:absolute;
+    top:110px;
+    left:385px; 
+    width:150px; 
+    height:20px; 
+    z-index:2;
+    font-size:120%;
+    rotate: 60deg
+}
+
+#roulette_3_choix_3{
+    text-align: center;
+    /* border: 2px solid #000000; */
+    position:absolute;
+    top:460px;
+    left:180px; 
+    width:150px; 
+    height:20px; 
+    z-index:2;
+    font-size:120%;
+    rotate: 180deg
+}
+
 /* Roulette 4 */
 
+#roulette4{
+    display: inline-flex;
+    animation-duration:0.5s;
+    animation-name : rotating;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    /* border: 2px solid #000000; */
+}
+
+#roulette_4_choix_1{
+    text-align: center;
+    /* border: 2px solid #000000; */
+    position:absolute;
+    top:50px;
+    left:20px; 
+    width:150px; 
+    height:20px; 
+    z-index:2;
+    font-size:120%;
+    rotate: 315deg;
+}
+
+#roulette_4_choix_2{
+    text-align: center;
+    /* border: 2px solid #000000; */
+    position:absolute;
+    top:50px;
+    left:330px; 
+    width:150px; 
+    height:20px; 
+    z-index:2;
+    font-size:120%;
+    rotate: 45deg
+}
+
+#roulette_4_choix_3{
+    text-align: center;
+    /* border: 2px solid #000000; */
+    position:absolute;
+    top:390px;
+    left:330px; 
+    width:150px; 
+    height:20px; 
+    z-index:2;
+    font-size:120%;
+    rotate: 135deg
+}
+
+#roulette_4_choix_4{
+    text-align: center;
+    /* border: 2px solid #000000; */
+    position:absolute;
+    top:390px;
+    left:20px; 
+    width:150px; 
+    height:20px; 
+    z-index:2;
+    font-size:120%;
+    rotate: 225deg
+}

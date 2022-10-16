@@ -5,10 +5,6 @@ let bouton_supp4 = document.getElementById("bouton_supp4");
 let div_choix2 = document.getElementById("div_choix2");
 let div_choix3 = document.getElementById("div_choix3");
 let div_choix4 = document.getElementById("div_choix4");
-let text_choix1 = document.getElementById('text_choix1').value;
-let text_choix2 = document.getElementById('text_choix2');
-let text_choix3 = document.getElementById('text_choix3');
-let text_choix4 = document.getElementById('text_choix4');
 let nbr_choice = 2;
 
 localStorage.clear()
@@ -40,33 +36,35 @@ bouton_supp4.addEventListener("click", () => {
 })
 
 document.getElementById("bouton_suivant").addEventListener("click", () => {
+  let text_choix1 = document.getElementById('text_choix1').value
+  localStorage.setItem('text_choix1',text_choix1)
+  let text_choix2 = document.getElementById('text_choix2').value
+  localStorage.setItem('text_choix2',text_choix2)
+  let text_choix3 = document.getElementById('text_choix3').value
+  localStorage.setItem('text_choix3',text_choix3)
+  let text_choix4 = document.getElementById('text_choix4').value
+  localStorage.setItem('text_choix4',text_choix4)
   if (nbr_choice == 2){
-    /* location.href = "./roulette2.html" */
-    let text_choix1 = document.getElementById('text_choix1').value
-    localStorage.setItem('text_choix1',text_choix1)
-    
-    console.log(text_choix1)
+    if (text_choix1 != "" && text_choix2 != "") {
+      location.href = "./roulette2.html"
+    } else {
+      alert("Remplissez les 2 choix")
+    }
+
   } else if (nbr_choice == 3){
-    location.href = "./roulette3.html"
+    
+    if (text_choix1 != "" && text_choix2 != "" && text_choix3 != "") {
+      location.href = "./roulette3.html"
+    } else {
+      alert("Remplissez les 3 choix")
+    }
+
   } else if (nbr_choice == 4){
-    location.href = "./roulette4.html"
+    if (text_choix1 != "" && text_choix2 != "" && text_choix3 != "" && text_choix4 != "") {
+      location.href = "./roulette4.html"
+    } else {
+      alert("Remplissez les 4 choix")
+    }
   }
     
 })
-
-
-
-/* document.getElementById("bouton_start2").addEventListener("click", () => {
-  console.log('start')
-  rotation('roulette2')
-})
-
-function rotation(roue){
-  document.getElementById(roue).classList = "tourne"
-  random_number = Math.floor(Math.random() * (10000-2000-1)) + 2000
-  console.log(random_number)
-  setTimeout(() => {
-      document.getElementById(roue).classList = "stop";
-},random_number)
-  
-} */
