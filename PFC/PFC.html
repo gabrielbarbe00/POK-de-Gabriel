@@ -68,7 +68,10 @@
                     Vainqueur = 'J2';
                 } else if (J1==='Feuille' && J2==='Pierre') {
                     Vainqueur = 'J1';
-                } else Vainqueur='Null';
+                } else if (J1===null || J2===null){
+                    Vainqueur=null;
+                }
+                else Vainqueur='Null';
 
                 html = document.querySelector('html');
 
@@ -78,10 +81,16 @@
 
                 if (Vainqueur==='Null') {
                     var msg = document.createElement('p');
-                    msg.textContent = 'J2 a joué ' + J2 + '. Match nul. Réessayez'
+                    msg.textContent = 'J1 a joué ' + J1 + '. J2 a joué ' + J2 + '. Match nul. Réessayez'
                     panel.appendChild(msg);
                     setGameOver();
-                } else {
+                } else if (Vainqueur===null) {
+                    var msg = document.createElement('p');
+                    msg.textContent = "Un des joueurs n'a pas joué.";
+                    panel.appendChild(msg);
+                    setGameOver();
+                }
+                else {
                     var msg = document.createElement('p');
                     msg.textContent = 'J1 a joué '+ J1 + '. J2 a joué ' + J2 + '. Le vainqueur est : ' + Vainqueur;
                     panel.appendChild(msg);
@@ -106,7 +115,7 @@
                 }
                 bool=false;
                 while (bool===false) {
-                    J2=prompt('J2 choisit son coup');
+                    J2=prompt('J2 choisit son coup : Pierre, Feuille ou Ciseaux');
                     if (J1===null || J2===null){
                         bool=true;
                     }
