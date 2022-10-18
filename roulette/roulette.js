@@ -10,13 +10,13 @@ let nbr_choice = 2;
 localStorage.clear()
 
 bouton_add2.addEventListener("click", () => {
-    div_choix3.style.display = "block";
+    div_choix3.style.display = "flex";
     bouton_add2.style.display = "none";
     nbr_choice = 3;
 })
 
 bouton_add3.addEventListener("click", () => {
-  div_choix4.style.display = "block";
+  div_choix4.style.display = "flex";
   bouton_add3.style.display = "none";
   bouton_supp3.style.display = "none";
   nbr_choice = 4;

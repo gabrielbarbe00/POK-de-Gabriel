@@ -2,8 +2,13 @@ document.getElementById("roulette_2_choix_1").textContent = localStorage.getItem
 document.getElementById("roulette_2_choix_2").textContent = localStorage.getItem('text_choix2')
 
 document.getElementById("bouton_start2").addEventListener("click", () => {
-    console.log('start')
     rotation('roulette2')
+    document.getElementById("bouton_start2").style.display = "none"
+    document.getElementById("bouton_retour2").style.display = "block"
+  })
+
+document.getElementById("bouton_retour2").addEventListener("click", () => {
+    location.href = "./index.html"
   })
   
   function rotation(roue){
