@@ -16,7 +16,7 @@
 .content {
     width : 1200px;
     margin: 0 auto;
-    height: 630px;
+    height: 618px;
     background-color:#EAEDF0;
 }
 .page {
@@ -28,6 +28,7 @@
     background-color: #EAEDF0;
 }
 .Salut {
+    margin-top: 12px;
     text-align: center;
     size: 1.2em;
 }
@@ -40,3 +41,11 @@
     padding: 0px;
     font-style: italic;
   }
+.PFC {
+    float: left;
+    margin-top: 15%;
+}
+.roue{
+    float:right;
+    margin-top: 12%;
+}
