@@ -38,8 +38,8 @@ header{
 
 #logo {
     position:absolute;
-    top:15px;
-    left:10px; 
+    top:2%;
+    left:1%; 
     width:70px; 
     height:70px; 
     z-index:2;
@@ -59,6 +59,10 @@ header{
     align-items: center;
 }
 
+.div_choix-hide{
+    display: none;
+}
+
 .choix{
     width: 80%;
     height: 100%;
@@ -71,9 +75,11 @@ header{
 }
 
 .bouton{
+    width: auto;
+    height: auto;
+    font-size: 1.3em;
+    padding:15px;
     margin-left: 10px;
-    width: 30px;
-    height: 30px;
     background-color: #33d373;
     font-weight: bold;
     text-align: center;
@@ -81,26 +87,21 @@ header{
     border-radius: 5px;
     box-sizing: border-box;
     color : black;
+    z-index: 2;
 }
 
-#div_choix3{
+.bouton_plus_moins{
+    padding: 0px;
+    width: 30px;
+    height: 30px;
+    font-weight: normal;
+}
+
+.bouton_hide{
     display: none;
 }
 
-#div_choix4{
-    display: none;
-}
-
-#bouton_suivant{
-    width: auto;
-    height: auto;
-    font-size: 1.3em;
-    padding:15px
-}
-
-
-/* Roulette 2 */
-#roulette2{
+.roulette{
     animation-duration:0.5s;
     animation-name : rotating;
     animation-timing-function: linear;
@@ -108,6 +109,7 @@ header{
     animation-fill-mode: forwards;
     margin-bottom: 15px;
 }
+
 
 #triangle {
     width: 0;
@@ -120,191 +122,72 @@ header{
 
 }
 
-#roulette_2_choix_1{
+.roulette_choix{
     text-align: center;
     position:absolute;
-    top:218px;
-    left:-40px; 
     width:150px; 
-    height:20px; 
+    height:20px;
     z-index:2;
     font-size:120%;
-    rotate: 270deg;
     font-weight: bold;
+}
 
+/* Roulette 2 */
+
+#roulette_2_choix_1{
+    top:218px;
+    left:-40px;  
+    rotate: 270deg;
 }
 
 #roulette_2_choix_2{
-    text-align: center;
-    position:absolute;
     top:218px;
     left:385px; 
-    width:150px; 
-    height:20px; 
-    z-index:2;
-    font-size:120%;
     rotate: 90deg;
-    font-weight: bold;
 }
-
-#bouton_start2{
-    width: auto;
-    height: auto;
-    font-size: 1.3em;
-    padding:15px
-}
-
-#bouton_retour2{
-    width: auto;
-    height: auto;
-    font-size: 1.3em;
-    padding:15px;
-    display: none;
-    z-index: 2;
-}
-
 
 /* Roulette 3 */
 
-#roulette3{
-    animation-duration:0.5s;
-    animation-name : rotating;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-fill-mode: forwards;
-    margin-bottom: 15px;
-}
-
 #roulette_3_choix_1{
-    text-align: center;
-    position:absolute;
-    top:110px;
+    top:23%;
     left:-10px; 
-    width:150px; 
-    height:20px; 
-    z-index:2;
-    font-size:120%;
     rotate: 300deg;
-    font-weight: bold;
 }
 
 #roulette_3_choix_2{
-    text-align: center;
-    position:absolute;
     top:110px;
-    left:355px; 
-    width:150px; 
-    height:20px; 
-    z-index:2;
-    font-size:120%;
+    left:355px;
     rotate: 60deg;
-    font-weight: bold;
 }
 
 #roulette_3_choix_3{
-    text-align: center;
-    position:absolute;
     top:430px;
-    left:173px; 
-    width:150px; 
-    height:20px; 
-    z-index:2;
-    font-size:120%;
+    left:173px;
     rotate: 180deg;
-    font-weight: bold;
 }
-
-#bouton_start3{
-    width: auto;
-    height: auto;
-    font-size: 1.3em;
-    padding:15px
-}
-
-#bouton_retour3{
-    width: auto;
-    height: auto;
-    font-size: 1.3em;
-    padding:15px;
-    display: none;
-    z-index: 2;
-}
-
 
 /* Roulette 4 */
 
-#roulette4{
-    animation-duration:0.5s;
-    animation-name : rotating;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-fill-mode: forwards;
-}
-
 #roulette_4_choix_1{
-    text-align: center;
-    position:absolute;
     top:70px;
-    left:25px; 
-    width:150px; 
-    height:20px; 
-    z-index:2;
-    font-size:120%;
+    left:25px;
     rotate: 315deg;
-    font-weight: bold;
 }
 
 #roulette_4_choix_2{
-    text-align: center;
-    position:absolute;
     top:70px;
-    left:325px; 
-    width:150px; 
-    height:20px; 
-    z-index:2;
-    font-size:120%;
+    left:325px;
     rotate: 45deg;
-    font-weight: bold;
 }
 
 #roulette_4_choix_3{
-    text-align: center;
-    position:absolute;
     top:365px;
-    left:325px; 
-    width:150px; 
-    height:20px; 
-    z-index:2;
-    font-size:120%;
+    left:325px;
     rotate: 135deg;
-    font-weight: bold;
 }
 
 #roulette_4_choix_4{
-    text-align: center;
-    position:absolute;
     top:365px;
-    left:25px; 
-    width:150px; 
-    height:20px; 
-    z-index:2;
-    font-size:120%;
+    left:25px;
     rotate: 225deg;
-    font-weight: bold;
-}
-
-#bouton_start4{
-    width: auto;
-    height: auto;
-    font-size: 1.3em;
-    padding:15px
-}
-
-#bouton_retour4{
-    width: auto;
-    height: auto;
-    font-size: 1.3em;
-    padding:15px;
-    display: none;
-    z-index: 2;
 }

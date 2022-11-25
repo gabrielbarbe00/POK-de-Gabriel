@@ -14,11 +14,11 @@ document.getElementById("bouton_retour4").addEventListener("click", () => {
   })
   
   function rotation(roue){
-    document.getElementById(roue).classList = "tourne"
+    document.getElementById(roue).classList = "tourne roulette"
     random_number = Math.floor(Math.random() * (3000-1000-1)) + 1000
     console.log(random_number)
     setTimeout(() => {
-        document.getElementById(roue).classList = "stop";
+        document.getElementById(roue).classList = "stop roulette";
   },random_number)
     
   }
